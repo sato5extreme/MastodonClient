@@ -2,9 +2,6 @@ package io.keiji.sample.mastodonclient
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.databinding.DataBindingUtil
-import io.keiji.sample.mastodonclient.databinding.ActivityMainBinding
-import kotlinx.android.synthetic.main.activity_main.view.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,10 +9,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-       val binding: ActivityMainBinding = DataBindingUtil.setContentView(
-           this,
-           R.layout.activity_main
-       )
-        binding.textview.text = "Hello DataBinding"
+        if (savedInstanceState == null) {
+            val fragment = MainFragment()
+            supportFragmentManager.beginTransaction()
+                .add(
+                    R.id.fragment_container,
+                    fragment,
+                    MainFragment::class.java.simpleName
+                )
+                .commit()
+        }
     }
 }
