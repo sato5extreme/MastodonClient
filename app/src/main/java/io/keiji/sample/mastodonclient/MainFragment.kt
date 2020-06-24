@@ -1,12 +1,16 @@
 package io.keiji.sample.mastodonclient
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import io.keiji.sample.mastodonclient.databinding.FragmentMainBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Retrofit
-import android.util.Log
 
 class MainFragment : Fragment(R.layout.fragment_main) {
 
@@ -26,11 +30,15 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         super.onViewCreated(view, savedInstanceState)
 
         binding = DataBindingUtil.bind(view)
-        binding?.button?.setOnClickListener{
+        binding?.button?.setOnClickListener {
             binding?.button?.text = "clicked"
-            val response = api.fetchPublicTimeline()
-                .execute().body()?.string()
-            Log.d(TAG, response)
+            CoroutineScope(Dispatchers.IO).launch {
+                val response = api.fetchPublicTimeline().string()
+                Log.d(TAG, response)
+                withContext(Dispatchers.Main) {
+                    binding?.button?.text = response
+                }
+            }
         }
     }
 
