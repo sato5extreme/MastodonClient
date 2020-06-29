@@ -15,7 +15,6 @@ class TootListFragment : Fragment(R.layout.fragment_toot_list) {
 
     companion object {
         val TAG = TootListFragment::class.java.simpleName
-
     }
 
     private var binding: FragmentTootListBinding? = null
