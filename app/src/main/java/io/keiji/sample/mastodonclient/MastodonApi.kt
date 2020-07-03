@@ -15,7 +15,6 @@ interface MastodonApi {
     @GET("api/v1/timelines/home")
     suspend fun fetchHomeTimeline(
         @Header("Authorization") accessToken: String,
-        @Query("max_id") maxId: String? = null,
-        @Query("limit") limit: Int? = null
+        @Query("max_id") maxId: String? = null
     ): List<Toot>
 }
