@@ -59,6 +59,7 @@ class TootListFragment : Fragment(R.layout.fragment_toot_list) {
             viewModel.tootList.value = it
         }
 
+        
         adapter = TootListAdapter(layoutInflater, tootListSnapshot)
         layoutManager = LinearLayoutManager(
             requireContext(),
