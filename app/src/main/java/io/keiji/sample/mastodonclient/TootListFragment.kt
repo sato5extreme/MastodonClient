@@ -60,7 +60,10 @@ class TootListFragment : Fragment(R.layout.fragment_toot_list) {
         }
 
 
+
+
         
+
         adapter = TootListAdapter(layoutInflater, tootListSnapshot)
         layoutManager = LinearLayoutManager(
             requireContext(),
