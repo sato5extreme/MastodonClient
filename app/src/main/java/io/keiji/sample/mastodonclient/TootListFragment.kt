@@ -50,7 +50,6 @@ class TootListFragment : Fragment(R.layout.fragment_toot_list) {
             }
         }
     }
-
     
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -59,8 +58,6 @@ class TootListFragment : Fragment(R.layout.fragment_toot_list) {
             viewModel.tootList.value = it
         }
 
-
-        
         adapter = TootListAdapter(layoutInflater, tootListSnapshot)
         layoutManager = LinearLayoutManager(
             requireContext(),
