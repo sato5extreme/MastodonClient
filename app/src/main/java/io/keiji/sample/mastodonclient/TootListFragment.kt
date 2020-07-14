@@ -11,6 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import io.keiji.sample.mastodonclient.databinding.FragmentTootListBinding
 
+
+
+
 class TootListFragment : Fragment(R.layout.fragment_toot_list) {
 
     companion object {
@@ -50,7 +53,7 @@ class TootListFragment : Fragment(R.layout.fragment_toot_list) {
             }
         }
     }
-    
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
