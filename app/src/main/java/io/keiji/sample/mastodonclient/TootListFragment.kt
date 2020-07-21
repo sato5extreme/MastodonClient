@@ -88,6 +88,9 @@ class TootListFragment : Fragment(R.layout.fragment_toot_list) {
 
         viewLifecycleOwner.lifecycle.addObserver(viewModel)
     }
+
+
+
     
     override fun onDestroyView() {
         super.onDestroyView()
