@@ -33,6 +33,9 @@ class TootListAdapter(
         holder.bind(tootList[position])
     }
 
+
+
+    
     class ViewHolder(
         private val binding: ListItemTootBinding
     ) : RecyclerView.ViewHolder(binding.root) {

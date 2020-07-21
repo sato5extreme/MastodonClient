@@ -91,7 +91,7 @@ class TootListFragment : Fragment(R.layout.fragment_toot_list) {
 
 
 
-    
+
     override fun onDestroyView() {
         super.onDestroyView()
 
