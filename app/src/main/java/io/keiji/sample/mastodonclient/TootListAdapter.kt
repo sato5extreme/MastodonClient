@@ -15,7 +15,9 @@ class TootListAdapter(
 
 
 
+
     
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
