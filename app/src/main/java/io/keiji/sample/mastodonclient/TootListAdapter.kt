@@ -12,19 +12,6 @@ class TootListAdapter(
 ) : RecyclerView.Adapter<TootListAdapter.ViewHolder>() {
 
     override fun getItemCount() = tootList.size
-
-
-
-
-
-
-
-    
-
-
-
-
-
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -53,3 +40,7 @@ class TootListAdapter(
         }
     }
 }
+
+
+
+
