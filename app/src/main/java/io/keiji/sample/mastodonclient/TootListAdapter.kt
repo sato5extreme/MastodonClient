@@ -28,7 +28,8 @@ class TootListAdapter(
     override fun onBindViewHolder(
         holder: ViewHolder,
         position: Int
-    ) {
+    )
+    {
         holder.bind(tootList[position])
     }
 
@@ -40,6 +41,9 @@ class TootListAdapter(
         }
     }
 }
+
+
+
 
 
 
